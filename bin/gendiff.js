@@ -14,8 +14,6 @@ program
 // Напрашивается мысль, что process - это объект, а argv - значения аргументов, но что это за аргументы?
 program.parse(process.argv);
 
-if (program.version) console.log()
-
-
+// if (program.version) console.log();
 
 console.log('Здесь должна быть информация...');
