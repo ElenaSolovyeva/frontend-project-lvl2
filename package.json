@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": "bin/gendiff.js",
   "dependencies": {
     "commander": "^6.0.0"
   },
