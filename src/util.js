@@ -2,24 +2,6 @@
 
 import program from 'commander';
 import fs from 'fs';
-// import getFilesDifference from 'getFilesDifference.js'
-
-const getData = (path) => {
-  console.log(`path: ${path}`);
-  const objectFromJson = fs.readFile(path, 'utf8', (err, data) => {
-    if (err) {
-      throw err;
-    }
-
-    // Распарсить полученные файлы с помощью JSON.parse(text);
-    console.log('JSON.parse(data):');
-    console.log(JSON.parse(data));
-
-    JSON.parse(data);
-  });
-  console.log(`objectFromJson: ${objectFromJson}`);
-  return objectFromJson;
-};
 
 const util = () => {
   program
@@ -30,9 +12,40 @@ const util = () => {
     .action((path1, path2, type) => {
       const outputFormat = type;
       // Нужно получить содержимое файлов на основании их адресов
-      const obj1 = getData(path1);
-      const obj2 = getData(path2);
-      console.log(obj1, obj2);
+      const obj1 = JSON.parse(fs.readFileSync(path1, 'utf8'));
+      const obj2 = JSON.parse(fs.readFileSync(path2, 'utf8'));
+      const keys1 = Object.keys(obj1);
+      const keys2 = Object.keys(obj2);
+      const resultKeys = keys1.filter((key) => !keys2.includes(key))
+        .concat(keys2)
+        .sort();
+
+      const result = resultKeys.reduce((acc, key) => {
+        const [newValue, oldValue] = ['+', '-'];
+
+        if (!keys1.includes(key)) {
+          acc = `${acc}
+          ${newValue}${key}: ${obj2[key]},`;
+          return acc;
+        }
+
+        if (!keys2.includes(key)) {
+          return `${acc}
+          ${oldValue}${key}: ${obj1[key]},`;
+        }
+
+        if (obj1[key] === obj2[key]) {
+          return `${acc}
+           ${key}: ${obj1[key]},`;
+        }
+
+        return `${acc}
+          ${oldValue}${key}: ${obj1[key]},
+          ${newValue}${key}: ${obj2[key]},`;
+      }, '');
+
+      console.log(`{${result.slice(0, (result.length-1))}
+    }`);
     });
 
   program.parse(process.argv);
@@ -41,7 +54,7 @@ const util = () => {
   //   console.error('no output format given!');
   // }
 
-  console.log(program.args);
+  // console.log(program.args);
 };
 
 export default util;
