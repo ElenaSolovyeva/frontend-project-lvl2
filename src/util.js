@@ -5,13 +5,20 @@ import fs from 'fs';
 // import getFilesDifference from 'getFilesDifference.js'
 
 const getData = (path) => {
-  fs.readFile(path, (err, data) => {
+  console.log(`path: ${path}`);
+  const objectFromJson = fs.readFile(path, 'utf8', (err, data) => {
     if (err) {
       throw err;
     }
+
     // Распарсить полученные файлы с помощью JSON.parse(text);
-    return JSON.parse(data);
+    console.log('JSON.parse(data):');
+    console.log(JSON.parse(data));
+
+    JSON.parse(data);
   });
+  console.log(`objectFromJson: ${objectFromJson}`);
+  return objectFromJson;
 };
 
 const util = () => {
@@ -21,8 +28,6 @@ const util = () => {
     .option('-f, --format <type>', 'output format' )
     .arguments('<path1> <path2> <type>')
     .action((path1, path2, type) => {
-      const pathFile1 = path1;
-      const pathFile2 = path2;
       const outputFormat = type;
       // Нужно получить содержимое файлов на основании их адресов
       const obj1 = getData(path1);
