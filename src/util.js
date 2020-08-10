@@ -5,8 +5,7 @@ import fs from 'fs';
 // import getFilesDifference from 'getFilesDifference.js'
 
 const getData = (path) => {
-
-  fs.read(path, (err, data) => {
+  fs.readFile(path, (err, data) => {
     if (err) {
       throw err;
     }
