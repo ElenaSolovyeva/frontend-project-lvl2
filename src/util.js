@@ -1,10 +1,11 @@
 'use strict';
 
 import program from 'commander';
+import fs from 'fs';
 // import getFilesDifference from 'getFilesDifference.js'
 
 const getData = (path) => {
-  const fs = require('fs');
+
   fs.read(path, (err, data) => {
     if (err) {
       throw err;

@@ -13,27 +13,31 @@ const getFilesDifference = (file1Properties, file2Properties) => {
   // заносить в несго пары ключ-значения с обработкой, одинаковые значения или нет
   // с добавлением "+" и "-" к названию ключа
   const result = resultKeys.reduce((acc, key) => {
+    const [newValue, oldValue] = ['+', '-'];
+
     if (!keys1.includes(key)) {
-      acc[`+${key}`] = file2Properties[key];
+      acc = `${acc}
+      ${newValue}${key}: ${file2Properties[key]},`; //
+      return acc;
     }
 
     if (!keys2.includes(key)) {
-      acc[`-${key}`] = file1Properties[key];
-      return acc;
+      return `${acc}
+      ${oldValue}${key}: ${file2Properties[key]},`;
     }
 
     if (file1Properties[key] === file2Properties[key]) {
-      acc[key] = file1Properties[key];
-      return acc;
+      return `${acc}
+       ${key}: ${file2Properties[key]},`;
     }
 
-    acc[`-${key}`] = file1Properties[key];
-    acc[`+${key}`] = file2Properties[key];
-    return acc;
+    return `${acc}
+      ${oldValue}${key}: ${file1Properties[key]},
+      ${newValue}${key}: ${file2Properties[key]},`;
+  }, '');
 
-  }, {})
-
-  return result;
+  return `{${result.slice(0, (result.length-1))}
+  }`;
 };
 
 export default getFilesDifference;
