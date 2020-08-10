@@ -5,7 +5,7 @@ import program from 'commander';
 
 const getData = (path) => {
   const fs = require('fs');
-  fs.readFile(path, (err, data) => {
+  fs.read(path, (err, data) => {
     if (err) {
       throw err;
     }
