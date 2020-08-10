@@ -1,5 +1,7 @@
 'use strict';
 
+// Результатом работы функции genDiff является строка!!!!!
+
 const getFilesDifference = (file1Properties, file2Properties) => {
   // Создать массивы из ключей 2х объектов, объединить, отсортировать
   const keys1 = Object.keys(file1Properties);
