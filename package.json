@@ -8,9 +8,14 @@
     "gendiff": "bin/gendiff.js"
   },
   "dependencies": {
-    "commander": "^6.0.0"
+    "commander": "^6.0.0",
+    "eslint-plugin-jest": "^23.20.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
