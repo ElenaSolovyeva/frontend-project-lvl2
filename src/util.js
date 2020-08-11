@@ -25,26 +25,26 @@ const util = () => {
 
         if (!keys1.includes(key)) {
           acc = `${acc}
-          ${newValue}${key}: ${obj2[key]},`;
+          ${newValue}${key}: ${obj2[key]}`;
           return acc;
         }
 
         if (!keys2.includes(key)) {
           return `${acc}
-          ${oldValue}${key}: ${obj1[key]},`;
+          ${oldValue}${key}: ${obj1[key]}`;
         }
 
         if (obj1[key] === obj2[key]) {
           return `${acc}
-           ${key}: ${obj1[key]},`;
+           ${key}: ${obj1[key]}`;
         }
 
         return `${acc}
-          ${oldValue}${key}: ${obj1[key]},
-          ${newValue}${key}: ${obj2[key]},`;
+          ${oldValue}${key}: ${obj1[key]}
+          ${newValue}${key}: ${obj2[key]}`;
       }, '');
 
-      console.log(`{${result.slice(0, (result.length-1))}
+      console.log(`{${result}
     }`);
     });
 
