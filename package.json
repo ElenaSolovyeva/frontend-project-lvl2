@@ -22,12 +22,11 @@
   "bugs": {
     "url": "https://github.com/ElenaSolovyeva/frontend-project-lvl2/issues"
   },
-  "type": "module",
   "jest": {
   "testEnvironment": "node",
   "transform": {}
-},
-"homepage": "https://github.com/ElenaSolovyeva/frontend-project-lvl2#readme"
+  },
+  "homepage": "https://github.com/ElenaSolovyeva/frontend-project-lvl2#readme",
   "dependencies": {
     "commander": "^6.0.0",
     "eslint-plugin-jest": "^23.20.0"
@@ -40,5 +39,5 @@
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
     "jest": "^26.3.0"
-  },
+  }
 }
