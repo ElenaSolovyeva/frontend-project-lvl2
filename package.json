@@ -7,6 +7,27 @@
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
+  "engines": {
+    "node": ">=13"
+  },
+  "scripts": {
+    "test": "npx -n --experimental-vm-modules jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElenaSolovyeva/frontend-project-lvl2.git"
+  },
+  "author": "Elena Solovyeva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElenaSolovyeva/frontend-project-lvl2/issues"
+  },
+  "type": "module",
+  "jest": {
+  "testEnvironment": "node",
+  "transform": {}
+},
+"homepage": "https://github.com/ElenaSolovyeva/frontend-project-lvl2#readme"
   "dependencies": {
     "commander": "^6.0.0",
     "eslint-plugin-jest": "^23.20.0"
@@ -20,17 +41,4 @@
     "eslint-plugin-import": "^2.22.0",
     "jest": "^26.3.0"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ElenaSolovyeva/frontend-project-lvl2.git"
-  },
-  "author": "Elena Solovyeva",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ElenaSolovyeva/frontend-project-lvl2/issues"
-  },
-  "homepage": "https://github.com/ElenaSolovyeva/frontend-project-lvl2#readme"
 }
