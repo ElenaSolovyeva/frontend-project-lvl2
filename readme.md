@@ -3,3 +3,5 @@
 ![Check with Eslint](https://github.com/ElenaSolovyeva/frontend-project-lvl2/workflows/Check%20with%20Eslint/badge.svg)
 
 ![Node CI](https://github.com/ElenaSolovyeva/frontend-project-lvl2/workflows/Node%20CI/badge.svg)
+
+How it works  https://asciinema.org/a/B5xDVtiXvSelq9fYfl8qGxga0 
