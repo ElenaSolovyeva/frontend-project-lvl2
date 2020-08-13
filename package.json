@@ -23,8 +23,8 @@
     "url": "https://github.com/ElenaSolovyeva/frontend-project-lvl2/issues"
   },
   "jest": {
-  "testEnvironment": "node",
-  "transform": {}
+    "testEnvironment": "node",
+    "transform": {}
   },
   "homepage": "https://github.com/ElenaSolovyeva/frontend-project-lvl2#readme",
   "dependencies": {
@@ -32,12 +32,12 @@
     "eslint-plugin-jest": "^23.20.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
-    "babel-jest": "^26.3.0",
     "eslint": "^7.6.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
-    "jest": "^26.3.0"
+    "jest": "^26.3.0",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "babel-jest": "^26.3.0"
   }
 }
