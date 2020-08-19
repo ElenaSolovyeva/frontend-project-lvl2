@@ -6,8 +6,8 @@ const parse = (filePath) => {
   const typeOfFile = path.extname(filePath);
 
   return (typeOfFile === '.yml')
-    ? yaml.safeLoad(fs.readFileSync(path, 'utf8'))
-    : JSON.parse(fs.readFileSync(path, 'utf8'));
+    ? yaml.safeLoad(fs.readFileSync(filePath, 'utf8'))
+    : JSON.parse(fs.readFileSync(filePath, 'utf8'));
 };
 
 export default parse;
