@@ -6,5 +6,5 @@
 
 ![Node CI](https://github.com/ElenaSolovyeva/frontend-project-lvl2/workflows/Node%20CI/badge.svg)
 
-How it works:  
+How to compare .json and .yml files using gendiff:  
 https://asciinema.org/a/tLqiq7Lr8sDQQQoZ1550LMNpC
