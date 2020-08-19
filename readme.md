@@ -6,6 +6,5 @@
 
 ![Node CI](https://github.com/ElenaSolovyeva/frontend-project-lvl2/workflows/Node%20CI/badge.svg)
 
-How it works:
-  https://asciinema.org/a/tLqiq7Lr8sDQQQoZ1550LMNpC
-  https://asciinema.org/a/B5xDVtiXvSelq9fYfl8qGxga0
+How it works:  
+https://asciinema.org/a/tLqiq7Lr8sDQQQoZ1550LMNpC
