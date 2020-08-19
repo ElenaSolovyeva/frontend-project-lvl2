@@ -26,10 +26,14 @@ const path1 = getFixturePath('file1.json');
 const path2 = getFixturePath('file2.json');
 const path3 = getFixturePath('file3.yml');
 const path4 = getFixturePath('file4.yml');
+const path5 = getFixturePath('file5.ini');
+const path6 = getFixturePath('file6.ini');
 const pathResult = getFixturePath('result.txt');
 const result = fs.readFileSync(pathResult, 'utf8').trim();
 
 test('show difference json-json', () => expect(getDifference(path1, path2, 'txt')).toBe(result));
 test('show difference yaml-yaml', () => expect(getDifference(path3, path4, 'txt')).toBe(result));
+test('show difference ini-ini', () => expect(getDifference(path5, path6, 'txt')).toBe(result));
 test('show difference json-yaml', () => expect(getDifference(path1, path4, 'txt')).toBe(result));
-test('show difference yaml-json', () => expect(getDifference(path3, path2, 'txt')).toBe(result));
+test('show difference json-ini', () => expect(getDifference(path1, path6, 'txt')).toBe(result));
+test('show difference yaml-ini', () => expect(getDifference(path3, path6, 'txt')).toBe(result));
