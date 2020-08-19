@@ -21,7 +21,7 @@ const getDifference = (path1, path2) => {
       return `${acc}\n  ${oldValue}${key}: ${obj1[key]}`;
     }
 
-    if (obj1[key] === obj2[key]) {
+    if (obj1[key].toString(10) === obj2[key].toString(10)) {
       return `${acc}\n   ${key}: ${obj1[key]}`;
     }
 
