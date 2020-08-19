@@ -7,21 +7,11 @@
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
-  "dependencies": {
-    "commander": "^6.0.0",
-    "eslint-plugin-jest": "^23.20.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
-    "babel-jest": "^26.3.0",
-    "eslint": "^7.6.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "jest": "^26.3.0"
+  "engines": {
+    "node": ">=13"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx -n --experimental-vm-modules jest -e"
   },
   "repository": {
     "type": "git",
@@ -32,5 +22,22 @@
   "bugs": {
     "url": "https://github.com/ElenaSolovyeva/frontend-project-lvl2/issues"
   },
-  "homepage": "https://github.com/ElenaSolovyeva/frontend-project-lvl2#readme"
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
+  },
+  "homepage": "https://github.com/ElenaSolovyeva/frontend-project-lvl2#readme",
+  "dependencies": {
+    "commander": "^6.0.0",
+    "eslint-plugin-jest": "^23.20.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.3.0",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "babel-jest": "^26.3.0"
+  }
 }
