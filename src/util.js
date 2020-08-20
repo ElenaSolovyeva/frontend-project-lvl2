@@ -2,7 +2,7 @@ import program from 'commander';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
-import getDifference from './getDifference.js';
+import compareTrees from './compareTrees.js';
 
 const util = () => {
   program
@@ -19,7 +19,7 @@ const util = () => {
       const path1 = getFixturePath(file1);
       const path2 = getFixturePath(file2);
 
-      console.log(getDifference(path1, path2));
+      console.log(compareTrees(path1, path2));
     });
 
   program.parse(process.argv);
